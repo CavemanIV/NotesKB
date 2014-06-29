@@ -1,0 +1,43 @@
+//  Created by caveman on 14-6-29.
+
+extends layout
+
+block append css_and_script
+    script(src="http://code.jquery.com/jquery-1.10.1.min.js")
+    script(src="http://code.jquery.com/ui/1.10.4/jquery-ui.js")
+    script(src="javascripts/ghostdown.js")
+    script(src="javascripts/jquery.ghostdown.js")
+    link(href="stylesheets/ghostdown.css" media="all" rel="stylesheet")
+
+block append content
+    h4 This template is used for either creating or editing page
+    br
+    br
+    br
+    .features
+        section.editor
+            div.outer
+                div.editorwrap
+                    section.entry-markdown
+                        header.floatingheader Markdown
+                        section.entry-markdown-content
+                            textarea ###The Benefits Are Obvious!
+                                | * Never stop writing, format on the fly
+                                | * No messing around with *buttons* everywhere
+                                | * No writing repetitive HTML markup
+                                | * Mobile friendly
+                                | It's a wonderful solution to a problem which bloggers have faced for many years now.
+                                | > Applying a multitude of formatting styles, with very little effort, and seeing those styles rendered exactly as they will appear on the website.
+                                | Give it a try! Start typing in the `Markdown` box. It's easy.
+                    section.entry-preview.active
+                        header.floatingheader Preview
+                            span.entry-word-count 0 words
+                        section.entry-preview-content
+                            .rendered-markdown
+
+    script.
+        $(document).ready(function () {
+            $(".editor").ghostDown();
+        });
+
+

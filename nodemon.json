@@ -1,0 +1,5 @@
+{
+    "verbose": true,
+    "watch": ["*.js"],
+    "ignore": [".git", "node_modules", "bower_components", ".sass-cache", ".idea"]
+}
